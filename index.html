@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #2f3136; /* Discord dark background */
-            color: #ffffff; /* White text */
+            background-color: #2f3136;
+            color: #ffffff;
             margin: 0;
             padding: 20px;
             overflow: hidden;
@@ -16,7 +16,7 @@
 
         h1 {
             text-align: center;
-            color: #7289DA; /* Discord blue color */
+            color: #7289DA;
             margin-bottom: 20px;
             font-size: 2.5em;
         }
@@ -27,7 +27,7 @@
             border-radius: 15px;
             padding: 20px;
             margin: 30px auto;
-            background-color: rgba(54, 57, 63, 0.85); /* Slightly transparent dark background */
+            background-color: rgba(54, 57, 63, 0.85);
             width: 80%;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
             text-align: center;
@@ -42,25 +42,13 @@
             transform: translateY(0);
         }
 
-        h2 {
-            color: #7289DA; /* Discord blue */
-            margin-top: 0;
-            font-size: 1.8em;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.5em;
-            margin: 15px 0;
-        }
-
         .nav-buttons {
             text-align: center;
             margin-top: 20px;
         }
 
         .nav-buttons button {
-            background-color: #7289DA; /* Discord blue */
+            background-color: #7289DA;
             color: white;
             border: none;
             padding: 12px 25px;
@@ -72,22 +60,8 @@
         }
 
         .nav-buttons button:hover {
-            background-color: #5b6eae; /* Darker blue */
+            background-color: #5b6eae;
             transform: scale(1.05);
-        }
-
-        .slide img {
-            width: 200px; /* Set width */
-            height: 200px; /* Set height */
-            border-radius: 50%; /* Make images circular */
-            margin-bottom: 20px;
-            border: 3px solid #7289DA;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease; /* Smooth transition */
-        }
-
-        .slide img:hover {
-            transform: scale(1.05); /* Scale image on hover */
         }
     </style>
 </head>
@@ -163,35 +137,31 @@
         <p>C'était une époque amusante dans ma vie.</p>
     </section>
 
-    <section class="slide">
-        <h2>Diapositive 11: Conclusion</h2>
-        <img src="IMG_1732.jpg" alt="Conclusion">
-        <p>J'ai beaucoup appris et j'ai de bons souvenirs.</p>
-    </section>
- <button onclick="readPage()">Read Page</button><br>
+    <button onclick="readSlides()">Read Page</button>
+
     <div class="nav-buttons">
         <button onclick="prevSlide()">Précédent</button>
         <button onclick="nextSlide()">Suivant</button>
     </div>
-<script>
-    function readSlides() {
-      const slides = document.querySelectorAll('.slide');
-      let combinedText = '';
 
-      slides.forEach(slide => {
-        combinedText += slide.innerText + ' ';
-      });
-
-      if (combinedText.trim() === '') {
-        alert("No slides to read!");
-        return;
-      }
-
-      const speech = new SpeechSynthesisUtterance(combinedText);
-      window.speechSynthesis.speak(speech);
-    }
-  </script>
     <script>
+        // Text-to-Speech Function
+        function readSlides() {
+            const activeSlide = document.querySelector('.slide.active');
+            if (activeSlide) {
+                const textContent = activeSlide.innerText;
+                if (textContent.trim()) {
+                    const speech = new SpeechSynthesisUtterance(textContent);
+                    window.speechSynthesis.speak(speech);
+                } else {
+                    alert("No text to read on this slide.");
+                }
+            } else {
+                alert("No active slide to read!");
+            }
+        }
+
+        // Slide Navigation Functions
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
 
@@ -203,17 +173,4 @@
 
         function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // Initialize the first slide
-        showSlide(currentSlide);
-    </script>
-
-</body>
-</html>
+            showSlide(currentS

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Souvenirs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2f3136; /* Discord dark background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #7289DA; /* Discord blue color */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .slide {
+            display: none;
+            border: 2px solid #7289DA;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px auto;
+            background-color: rgba(54, 57, 63, 0.85); /* Slightly transparent dark background */
+            width: 80%;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: #7289DA; /* Discord blue */
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5em;
+            margin: 15px 0;
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #7289DA; /* Discord blue */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav-buttons button:hover {
+            background-color: #5b6eae; /* Darker blue */
+            transform: scale(1.05);
+        }
+
+        .slide img {
+            width: 200px; /* Set width */
+            height: 200px; /* Set height */
+            border-radius: 50%; /* Make images circular */
+            margin-bottom: 20px;
+            border: 3px solid #7289DA;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .slide img:hover {
+            transform: scale(1.05); /* Scale image on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cover-slide slide active">
+        <h1>Mes Souvenirs</h1>
+        <img src="IMG_1732.jpg" alt="Kameron Bennett">
+        <h2>Bonjour, je m'appelle Kameron Bennett</h2>
+        <p>Bienvenue dans ma présentation!</p>
+    </div>
+
+    <section class="slide">
+        <h2>Diapositive 2: Mon premier animal</h2>
+        <img src="cat.png" alt="Mon premier animal">
+        <p>Mon premier animal de compagnie était un chat nommé Crunchy. Il était très mignon.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 3: Mon apparence</h2>
+        <img src="IMG_1732.jpg" alt="Mon apparence">
+        <p>J'avais les cheveux blonds, courts, et les yeux bleus.</p>
+        <p>Je ne portais pas de lunettes.</p>
+        <p>Quand j'étais jeune, j'étais petit mais dynamique.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 4: Mes émotions</h2>
+        <img src="chaos.webp" alt="Mes émotions">
+        <p>J'étais quelqu'un de joyeux et curieux.</p>
+        <p>J'aimais explorer et découvrir de nouvelles choses.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 5: Mes vêtements préférés</h2>
+        <img src="IMG_1732.jpg" alt="Mes vêtements préférés">
+        <p>J'aimais porter des t-shirts colorés et des jeans.</p>
+        <p>Les vêtements confortables étaient mes préférés.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 6: Qu'est-ce que j'aimais manger?</h2>
+        <img src="pizza.jpeg" alt="Ma nourriture préférée">
+        <p>J'aimais beaucoup manger des pâtes et des pizzas.</p>
+        <p>Les bonbons étaient aussi mes favoris!</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 7: Mes jouets préférés</h2>
+        <img src="computer.png" alt="Mes jouets préférés">
+        <p>Je n'avais pas de peluches, mais mes jouets préférés étaient les jeux vidéo.</p>
+        <p>J'aimais aussi jouer avec mes Lego.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 8: Mes activités</h2>
+        <img src="computer.png" alt="Mes activités">
+        <p>Je ne pratiquais pas de sports, mais je passais du temps à jouer à des jeux vidéo et à dessiner.</p>
+        <p>J'aimais aussi sortir avec des amis.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 9: Mes films préférés</h2>
+        <img src="toystory.png" alt="Mes films préférés">
+        <p>Mon film préféré était "Toy Story".</p>
+        <p>J'aimais beaucoup les histoires d'animaux et d'aventure.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 10: Ma musique préférée</h2>
+        <img src="music.png" alt="Ma musique préférée">
+        <p>J'aimais écouter tous les genres de musique en général.</p>
+        <p>C'était une époque amusante dans ma vie.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Diapositive 11: Conclusion</h2>
+        <img src="IMG_1732.jpg" alt="Conclusion">
+        <p>J'ai beaucoup appris et j'ai de bons souvenirs.</p>
+    </section>
+
+    <div class="nav-buttons">
+        <button onclick="prevSlide()">Précédent</button>
+        <button onclick="nextSlide()">Suivant</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+
+</body>
+</html>

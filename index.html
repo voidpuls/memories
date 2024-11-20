@@ -168,12 +168,29 @@
         <img src="IMG_1732.jpg" alt="Conclusion">
         <p>J'ai beaucoup appris et j'ai de bons souvenirs.</p>
     </section>
-
+ <button onclick="readPage()">Read Page</button><br>
     <div class="nav-buttons">
         <button onclick="prevSlide()">Précédent</button>
         <button onclick="nextSlide()">Suivant</button>
     </div>
+<script>
+    function readSlides() {
+      const slides = document.querySelectorAll('.slide');
+      let combinedText = '';
 
+      slides.forEach(slide => {
+        combinedText += slide.innerText + ' ';
+      });
+
+      if (combinedText.trim() === '') {
+        alert("No slides to read!");
+        return;
+      }
+
+      const speech = new SpeechSynthesisUtterance(combinedText);
+      window.speechSynthesis.speak(speech);
+    }
+  </script>
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
